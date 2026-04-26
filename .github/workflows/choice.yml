@@ -11,5 +11,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      LOG_LEVEL: ${{ inputs.log-level }}
     steps:
-      - run: "echo ${{ inputs.log-level }}"
+      - run: echo "${LOG_LEVEL}"
