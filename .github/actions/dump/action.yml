@@ -3,7 +3,7 @@ description: |
   環境変数と github コンテキストをログ出力します。
 inputs:
   enable-context:
-    default: true
+    default: 'true'
     required: false
     description: github コンテキストをログ出力するか
 outputs:
@@ -16,10 +16,10 @@ runs:
     - run: printenv | sort
       shell: bash
     - run: echo "${CONTEXT}"
-      if: ${{ inputs.enable-context == true }}
+      if: ${{ inputs.enable-context == 'true' }}
       env:
         CONTEXT: ${{ toJSON(github) }}
       shell: bash
     - id: current
-      run: echo "date=$(date)" >> "${GITHUB_OUTPUTS}"
+      run: echo "date=$(date)" >> "${GITHUB_OUTPUT}"
       shell: bash
