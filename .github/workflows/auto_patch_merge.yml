@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - id: meta
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@v3
       - if: ${{ steps.meta.outputs.package-ecosystem == 'github_actions' && steps.meta.outputs.update_type != 'version-update:semver-major' }}
         run: |
           gh pr review "${GITHUB_HEAD_REF}" --approve
