@@ -4,7 +4,3 @@ updates:
     directory: /
     schedule:
       interval: daily
-    ignore:
-      - dependency-name: 'actions/*'
-        update-types:
-          - version-update:semver-major # メジャーバージョンの更新は除外
